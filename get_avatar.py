@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# COMMAND LINE PROGRAM TO DOWNLOAD A USER'S AVATAR FROM GITHUB. USAGE: `PYTHON get_avatar.py <GITHUB_USERNAME>`. 
+# COMMAND LINE PROGRAM TO DOWNLOAD A USER'S AVATAR FROM GITHUB.
+#USAGE: `PYTHON get_avatar.py <GITHUB_USERNAME>`. 
 
 import sys, json
 import argparse
@@ -18,7 +19,8 @@ if result.ok :
     user_info = json.loads(result.content)
     avatarURL = user_info['avatar_url']
 else:
-    sys.stderr.write( "Error fetching user information for {0}; exiting now, sorry...\n".format(args.username) )
+    sys.stderr.write( "Error fetching user information for {0};\
+            exiting now, sorry...\n".format(args.username) )
     sys.exit()
 
 # DOWNLOAD AND SAVE IMAGE FILE
